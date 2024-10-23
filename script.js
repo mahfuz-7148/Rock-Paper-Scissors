@@ -1,4 +1,4 @@
-const choose = ['ROCK', 'PAPER', 'SCISSORS'];
+const choose = ['rock', 'paper', 'scissors'];
 const chooses = document.getElementById('choose');
 const playerDisplay = document.getElementById('playerDisplay');
 const computerDisplay = document.getElementById('computerDisplay');
@@ -20,8 +20,15 @@ const playGame = playerChoose => {
     result = 'You lose!';
   }
   resultDisplay.textContent = result;
-  if(result === 'You win!')resultDisplay.classList.add('greenText')
-  if(result === 'You lose!')resultDisplay.classList.add('redText')
+  resultDisplay.classList.remove('greenText', 'redText');
+  switch (result) {
+    case 'You win!':
+      resultDisplay.classList.add('greenText');
+      break;
+    case 'You lose!':
+      resultDisplay.classList.add('redText');
+      break;
+  }
 };
 chooses.querySelectorAll('button').forEach(button => {
   button.addEventListener('click', () => {
