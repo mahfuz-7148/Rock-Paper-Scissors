@@ -1,4 +1,4 @@
-const choose = ['rock', 'paper', 'scissors'];
+const choose = ['ROCK', 'PAPER', 'SCISSORS'];
 const chooses = document.getElementById('choose');
 const playerDisplay = document.getElementById('playerDisplay');
 const computerDisplay = document.getElementById('computerDisplay');
@@ -11,9 +11,9 @@ const playGame = playerChoose => {
   if (playerChoose === computerChoose) {
     result = "It's a tie!";
   } else if (
-    (playerChoose === 'rock' && computerChoose === 'scissors') ||
-    (playerChoose === 'paper' && computerChoose === 'rock') ||
-    (playerChoose === 'scissors' && computerChoose === 'paper')
+    (playerChoose === 'ROCK' && computerChoose === 'SCISSORS') ||
+    (playerChoose === 'PAPER' && computerChoose === 'ROCK') ||
+    (playerChoose === 'SCISSORS' && computerChoose === 'PAPER')
   ) {
     result = 'You win!';
   } else {
@@ -21,13 +21,10 @@ const playGame = playerChoose => {
   }
   resultDisplay.textContent = result;
   resultDisplay.classList.remove('greenText', 'redText');
-  switch (result) {
-    case 'You win!':
-      resultDisplay.classList.add('greenText');
-      break;
-    case 'You lose!':
-      resultDisplay.classList.add('redText');
-      break;
+  if (result === 'You win!') {
+    resultDisplay.classList.add('greenText');
+  } else if (result === 'You lose!') {
+    resultDisplay.classList.add('redText');
   }
 };
 chooses.querySelectorAll('button').forEach(button => {
