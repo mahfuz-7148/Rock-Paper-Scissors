@@ -10,10 +10,10 @@ h1 {
     font-size: 4rem;
     color: chocolate;
 }
-#choose {
+#chooses {
     margin-bottom: 30px;
 }
-#choose button {
+#chooses button {
     font-size: 8rem;
     min-width: 160px;
     margin: 20px;
@@ -22,7 +22,7 @@ h1 {
     cursor: pointer;
     transition: background-color 1s ease-in-out;
 }
-#choose button:hover {
+#chooses button:hover {
     background-color: rgb(44, 237, 6);
 }
 #playerDisplay, #computerDisplay {
